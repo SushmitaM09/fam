@@ -1,0 +1,21 @@
+.container2 {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color:var(--secondary-color);
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.header{
+position: absolute;
+ margin: 10px;
+ right: 0;
+ color: var(--third-color);
+}
+
+.nav-photo{
+  width: 40px;
+  height: 40px; 
+  border-radius: 50%; 
+  margin-right: 10px; 
+}
