@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
-
+import Sidebar from "./Sidebar";
+import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home =() => {
+  const [email, userName] = useState('Gabimaru');
   return (
+<div>
+<nav>
+        <Link to="profile">Profile</Link>
+        <Link to="password">Password</Link>
+        <Link to="family">Family</Link>
+        <Link to="dashboard">Dashboard</Link>
+      </nav>
+      <Outlet context={{userName}} />
+    <div className="home-layout">
+      <Sidebar/>
+      </div>
     <div className="container2">
       <div className="header d-flex align-items-center">
         <img
@@ -21,6 +35,7 @@ const Home =() => {
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            aria-label="User options"
           >
             User
           </a>
@@ -45,6 +60,10 @@ const Home =() => {
           </ul>
         </div>
       </div>
+      <div className="welcome-message">
+        <h1>Welcome, {userName}! Explore Family Management System</h1>
+    </div>
+    </div>
     </div>
   );
 }

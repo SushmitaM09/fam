@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { MdDashboard } from "react-icons/md";
 import { MdFamilyRestroom } from "react-icons/md";
@@ -5,6 +6,7 @@ import { TbPasswordUser } from "react-icons/tb";
 import { ImProfile } from "react-icons/im";
 import { FaXmark } from "react-icons/fa6";
 import './Sidebar.css';
+
   const Sidebar = ({ onClickHandler }) => {
     const navLinkItems = [
       {
@@ -35,13 +37,14 @@ import './Sidebar.css';
 
     return (
       <>
-        <aside className="fixed-start">
+        <aside className="sidebar">
           <div className="sidenav-header d-flex py-2 pe-3">
             <Link className="side-text" to="/Component/Signin" target="_blank">
               <span className="ms-1 fw-bold">LOG IN</span>
             </Link>
             <div onClick={onClickHandler} className="xmark cursor-pointer">
               <FaXmark />
+            </div>
             </div>
             <hr className="horizontal-divider mx-5" />
             <nav className=" navbar-nav">
@@ -55,7 +58,7 @@ import './Sidebar.css';
                     >
                       {items.icon && (
                         <div className="shadow  sidebar-icon icon-shape icon-sm shadow border-radius-md bg-whitr text-center me-2 d-flix align-items-center justify-content-center ">
-                          <items.icon />
+                          {React.createElement(items.icon )}
                         </div>
                       )}
                       {items.title}
@@ -64,7 +67,6 @@ import './Sidebar.css';
                 ))}
               </ul>
             </nav>
-          </div>
         </aside>
       </>
     );
