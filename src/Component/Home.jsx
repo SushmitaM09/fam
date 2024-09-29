@@ -6,20 +6,21 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home =() => {
-  const [email, userName] = useState('Gabimaru');
+  const [userName] = useState('Gabimaru');
   return (
-<div>
+    
+      <div className="container2">
+
 <nav>
-        <Link to="profile">Profile</Link>
-        <Link to="password">Password</Link>
-        <Link to="family">Family</Link>
-        <Link to="dashboard">Dashboard</Link>
+<nav>
+  <Link to="profile">Profile</Link>
+  <Link to="password">Password</Link>
+  <Link to="family">Family</Link>
+  <Link to="dashboard">Dashboard</Link>
+</nav>
+
       </nav>
-      <Outlet context={{userName}} />
-    <div className="home-layout">
-      <Sidebar/>
-      </div>
-    <div className="container2">
+
       <div className="header d-flex align-items-center">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHfd3PPulVSp4ZbuBFNkePoUR_fLJQe474Ag&s"
@@ -60,10 +61,14 @@ const Home =() => {
           </ul>
         </div>
       </div>
-      <div className="welcome-message">
-        <h1>Welcome, {userName}! Explore Family Management System</h1>
+      <div className="container3">
+      <div className="welcome-card ">
+        <span>Welcome, {userName}! Explore Family Management System</span>
     </div>
     </div>
+    <Outlet context={{userName}} />
+      <Sidebar/>
+  
     </div>
   );
 }
