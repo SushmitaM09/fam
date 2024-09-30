@@ -3,7 +3,7 @@ const Profile =()=>{
     return(
         
         <div className="profile">
-            
+            hello
             </div>
              
              

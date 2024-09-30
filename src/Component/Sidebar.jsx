@@ -12,27 +12,29 @@ import './Sidebar.css';
       {
         idx: 1,
         title: "Dashboard",
-        linkTo: "/pages/dashboard",
-        icon: MdDashboard,
+        linkTo: "/home/dashboard",
+        icon: MdDashboard
       },
-      {
-        idx: 2,
-        title: "My Profile",
-        linkTo: "/pages/Profile",
-        icon: ImProfile,
-      },
-      {
-        idx: 3,
-        title: "Change Password",
-        linkTo: "/pages/Password",
-        icon: TbPasswordUser,
-      },
-      {
-        idx: 4,
-        title: "My Family",
-        linkTo: "/pages/Family",
-        icon: MdFamilyRestroom,
-      },
+    
+ {
+  idx: 2,
+  title: "My Profile",
+  linkTo: "/home/profile",
+  icon:ImProfile,
+ },
+  {
+    idx:3,
+    title: "Change Password",
+    linkTo: "/home/password",
+    icon:  TbPasswordUser,
+  },
+{
+  idx:4,
+  title: "My Family",
+  linkTo: "/home/family",
+  icon:MdFamilyRestroom,
+},
+
     ];
 
     return (
@@ -48,7 +50,7 @@ import './Sidebar.css';
             </div>
             <hr className="horizontal-divider mx-5" />
             <nav className=" navbar-nav">
-              <ul className="nav-list lits-unstyled">
+              <ul className="nav-list lis-unstyled">
                 {navLinkItems.map((items) => (
                   <li key={items.idx} className="nav-item">
                     <Link

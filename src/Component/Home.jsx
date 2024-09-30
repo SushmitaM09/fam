@@ -2,24 +2,13 @@ import React, { useState } from "react";
 import "./Home.css";
 import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Home =() => {
+const Home = () => {
   const [userName] = useState('Gabimaru');
+  
   return (
-    
-      <div className="container2">
-
-<nav>
-<nav>
-  <Link to="profile">Profile</Link>
-  <Link to="password">Password</Link>
-  <Link to="family">Family</Link>
-  <Link to="dashboard">Dashboard</Link>
-</nav>
-
-      </nav>
+    <div className="container2">
 
       <div className="header d-flex align-items-center">
         <img
@@ -28,7 +17,7 @@ const Home =() => {
           className="nav-photo"
           style={{ marginRight: "10px" }}
         />
-        <div className="dropdrown">
+        <div className="dropdown">
           <a
             className="btn fs-4 dropdown-toggle"
             id="dropdownMenuButton"
@@ -55,21 +44,21 @@ const Home =() => {
             </li>
             <li>
               <a className="dropdown-item" href="#">
-                SignOut
+                Sign Out
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <div className="container3">
-      <div className="welcome-card ">
-        <span>Welcome, {userName}! Explore Family Management System</span>
-    </div>
-    </div>
-    <Outlet context={{userName}} />
-      <Sidebar/>
-  
+
+   
+
+      {/* Pass the userName to child routes */}
+      <Outlet context={{ userName }} />
+
+      <Sidebar />
     </div>
   );
-}
+};
+
 export default Home;

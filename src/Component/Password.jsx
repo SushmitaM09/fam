@@ -1,9 +1,9 @@
-const Password =()=>{
+import React from 'react'
 
-    return (
-        <div className="pass">
-           <p>ejhifs</p>
-        </div>
-    )
-};
-export default Password;
+export default function Password() {
+  return (
+    <div>
+      password
+    </div>
+  )
+}
